@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace CircusTrein
 {
-    public class Dieren
+    public class Animal
     {
         public enum GrootteTypes
         {
             Groot = 5,
             Middelgroot = 3,
-            Klein = 1
+            Klein = 1,
+            Geen = 0
         }
 
-        private GrootteTypes Grootte;
+        public GrootteTypes Grootte;
 
         private string _Naam;
         private bool _VleesEter;
@@ -32,7 +33,7 @@ namespace CircusTrein
             set { _VleesEter = value; }
         }
 
-        public void Dier(GrootteTypes grootte, bool VleesEtende, string naam)
+        public void animal(GrootteTypes grootte, bool VleesEtende, string naam)
         {
             Grootte = grootte;
             VleesEter = VleesEtende;
