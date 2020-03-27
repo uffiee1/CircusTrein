@@ -23,7 +23,6 @@ namespace CircusTrein
 
         public List<Animal> SortAnimals(List<Animal> disorderedAnimals)
         {
-            //Zet vleeseters eerst en het hoogste punten daarna sorteer van groot naar klein
             return disorderedAnimals.OrderByDescending(Animal => Animal.VleesEter).ThenByDescending(Animal => (int)Animal.Grootte).ToList();
         }
 

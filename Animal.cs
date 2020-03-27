@@ -33,6 +33,14 @@ namespace CircusTrein
             set { _VleesEter = value; }
         }
 
+        public Wagon Wagon
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public void animal(GrootteTypes grootte, bool VleesEtende, string naam)
         {
             Grootte = grootte;

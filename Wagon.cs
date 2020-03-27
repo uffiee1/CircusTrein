@@ -19,6 +19,14 @@ namespace CircusTrein
             private set{ _Plaats = 10; }
         }
 
+        public Train Train
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private Animal.GrootteTypes GrootsteVleeseter()
         {
             List<Animal> VleesEterList = Animals.Where(Animal => Animal.VleesEter).ToList();
