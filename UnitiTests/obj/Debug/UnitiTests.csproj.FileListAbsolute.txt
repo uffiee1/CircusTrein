@@ -1,0 +1,17 @@
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\obj\Debug\UnitiTests.csprojAssemblyReference.cache
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\obj\Debug\UnitiTests.csproj.CoreCompileInputs.cache
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\UnitiTests.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\UnitiTests.pdb
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\CircusTrein.exe
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\CircusTrein.pdb
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\CircusTrein.exe.config
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\obj\Debug\UnitiTests.csproj.CopyComplete
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\obj\Debug\UnitiTests.dll
+C:\Users\Ufuk\Documents\GitHub\CircusTrein\UnitiTests\obj\Debug\UnitiTests.pdb

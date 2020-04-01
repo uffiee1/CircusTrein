@@ -48,6 +48,16 @@ namespace CircusTrein
             Naam = naam;
         }
 
-        
+        //Voor UnitTest == AnimalTest
+        public Animal(GrootteTypes grootte, bool eetVlees, string naam)
+        {
+            Grootte = grootte;
+            VleesEter = eetVlees;
+            Naam = naam;
+        }
+        public override string ToString()
+        {
+            return $"{Grootte} ({(VleesEter ? "Vlees" : "Plant")})";
+        }
     }
 }

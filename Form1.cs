@@ -38,7 +38,7 @@ namespace CircusTrein
             }
 
             string name = txbxDierNaam.Text;
-            Animal newAnimal = new Animal();
+            Animal newAnimal = new Animal(grootteTypes, VleesEter, name);
             allAnimals.Add(newAnimal);
             lbDierLijst.Items.Add(newAnimal);
         }
