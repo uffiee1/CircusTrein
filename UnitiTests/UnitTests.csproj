@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="AnimalTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrainTest.cs" />
+    <Compile Include="WagonTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

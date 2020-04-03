@@ -12,7 +12,7 @@ namespace CircusTrein
 {
     public partial class Form1 : Form
     {
-        List<Animal> allAnimals = new List<Animal>();
+        List<Animal> listAnimals = new List<Animal>();
 
         public Form1()
         {
@@ -39,7 +39,7 @@ namespace CircusTrein
 
             string name = txbxDierNaam.Text;
             Animal newAnimal = new Animal(grootteTypes, VleesEter, name);
-            allAnimals.Add(newAnimal);
+            listAnimals.Add(newAnimal);
             lbDierLijst.Items.Add(newAnimal);
         }
 

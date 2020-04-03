@@ -146,7 +146,7 @@
             this.lbDierLijst.FormattingEnabled = true;
             this.lbDierLijst.Location = new System.Drawing.Point(260, 32);
             this.lbDierLijst.Name = "lbDierLijst";
-            this.lbDierLijst.Size = new System.Drawing.Size(193, 225);
+            this.lbDierLijst.Size = new System.Drawing.Size(193, 316);
             this.lbDierLijst.TabIndex = 3;
             // 
             // lbTrein
@@ -154,7 +154,7 @@
             this.lbTrein.FormattingEnabled = true;
             this.lbTrein.Location = new System.Drawing.Point(658, 32);
             this.lbTrein.Name = "lbTrein";
-            this.lbTrein.Size = new System.Drawing.Size(193, 225);
+            this.lbTrein.Size = new System.Drawing.Size(193, 316);
             this.lbTrein.TabIndex = 4;
             // 
             // label2
@@ -162,25 +162,25 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(261, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.label2.Text = "Dieren Lijst:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(456, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.label3.Text = "Wagon:";
             // 
             // lbWagon
             // 
             this.lbWagon.FormattingEnabled = true;
             this.lbWagon.Location = new System.Drawing.Point(459, 32);
             this.lbWagon.Name = "lbWagon";
-            this.lbWagon.Size = new System.Drawing.Size(193, 225);
+            this.lbWagon.Size = new System.Drawing.Size(193, 316);
             this.lbWagon.TabIndex = 7;
             // 
             // label4
@@ -188,9 +188,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(655, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 8;
-            this.label4.Text = "label4";
+            this.label4.Text = "Trein:";
             // 
             // groupBox2
             // 
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 258);
+            this.ClientSize = new System.Drawing.Size(857, 352);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
