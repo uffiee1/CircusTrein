@@ -9,6 +9,7 @@ namespace CircusTrein
 {
     public class Animal
     {
+
         public enum GrootteTypes
         {
             Groot = 5,
