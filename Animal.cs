@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace CircusTrein
 {
+    public enum GrootteTypes
+    {
+        Groot = 5,
+        Middelgroot = 3,
+        Klein = 1,
+        Geen = 0
+    }
+
     public class Animal
     {
-
-        public enum GrootteTypes
-        {
-            Groot = 5,
-            Middelgroot = 3,
-            Klein = 1,
-            Geen = 0
-        }
-
         public GrootteTypes Grootte;
 
         private string _Naam;

@@ -19,26 +19,23 @@ namespace CircusTrein
             InitializeComponent();
         }
 
+        private GrootteTypes getGrootteTypes()
+        {
+            if (rbDierGroot.Checked) return GrootteTypes.Groot;
+            if (rbDierMiddel.Checked) return GrootteTypes.Middelgroot;
+            if (rbDierKlein.Checked) return GrootteTypes.Klein;
+
+            //Als er niks ingecheked is bij dieren grootte maakt het automatisch een kleine dier aan.
+            return GrootteTypes.Klein;
+
+        }
+
         private void btnVoegToe_Click(object sender, EventArgs e)
         {
             bool VleesEter = rbVlees.Checked;
-            Animal.GrootteTypes grootteTypes;
-
-            if (rbDierGroot.Checked)
-            {
-                grootteTypes = Animal.GrootteTypes.Groot;
-            }
-            else if (rbDierMiddel.Checked)
-            {
-                grootteTypes = Animal.GrootteTypes.Middelgroot;
-            }
-            else
-            {
-                grootteTypes = Animal.GrootteTypes.Klein;
-            }
-
+          
             string name = txbxDierNaam.Text;
-            Animal newAnimal = new Animal(grootteTypes, VleesEter, name);
+            Animal newAnimal = new Animal(getGrootteTypes(), VleesEter, name);
             listAnimals.Add(newAnimal);
             lbDierLijst.Items.Add(newAnimal);
         }

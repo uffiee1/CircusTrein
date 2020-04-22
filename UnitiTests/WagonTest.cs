@@ -17,7 +17,7 @@ namespace UnitTests
 
             //Assert
             Assert.IsNotNull(wagon);
-            Assert.AreEqual(6, wagon.Plaats);
+            Assert.AreEqual(0, wagon.Plaats);
         }
 
         [TestMethod]
@@ -27,8 +27,8 @@ namespace UnitTests
             Wagon wagon = new Wagon();
 
             //Bij 'false' kijkt of het dier VleesEter is of niet, 'nvt' is naam van het dier.
-            Animal plant = new Animal(Animal.GrootteTypes.Klein, false, "nvt");
-            Animal vlees = new Animal(Animal.GrootteTypes.Groot, true, "nvt");
+            Animal plant = new Animal(GrootteTypes.Klein, false, "KleinPlantenEtendeDier");
+            Animal vlees = new Animal(GrootteTypes.Groot, true, "GrootVleesEtendeDier");
             wagon.AddAnimal(vlees);
 
             //Act
@@ -37,5 +37,7 @@ namespace UnitTests
             //Assert
             Assert.AreEqual(false, shouldBeFalse);
         }
+
+
     }
 }

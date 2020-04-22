@@ -10,8 +10,7 @@ namespace UnitiTests
         [TestMethod]
         public void ToStringTest()
         {
-            Animal animal = new Animal(
-                Animal.GrootteTypes.Groot, true, "TestGrootVleesEterAnimal");
+            Animal animal = new Animal(GrootteTypes.Groot, true, "TestGrootVleesEterAnimal");
 
             Assert.AreEqual("Groot (Vlees)", animal.ToString());
         }

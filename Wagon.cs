@@ -27,17 +27,15 @@ namespace CircusTrein
             }
         }
 
-        private Animal.GrootteTypes GrootsteVleeseter()
+        private GrootteTypes GrootsteVleeseter()
         {
             List<Animal> VleesEterList = Animals.Where(Animal => Animal.VleesEter).ToList();
 
             if(VleesEterList.Count == 0)
             {
-                return Animal.GrootteTypes.Geen;
-            } else
-            {
-                return VleesEterList.First().Grootte;
-            }
+                return GrootteTypes.Groot;
+            } 
+            return VleesEterList.First().Grootte;
         }
 
         public bool AddAnimal(Animal newAnimal)
