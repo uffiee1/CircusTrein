@@ -140,6 +140,7 @@
             this.btnTrain.TabIndex = 2;
             this.btnTrain.Text = "Begin met Trein!";
             this.btnTrain.UseVisualStyleBackColor = true;
+            this.btnTrain.Click += new System.EventHandler(this.btnTrain_Click);
             // 
             // lbDierLijst
             // 
