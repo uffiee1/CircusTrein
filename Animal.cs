@@ -11,53 +11,47 @@ namespace CircusTrein
     {
         Groot = 5,
         Middelgroot = 3,
-        Klein = 1,
-        Geen = 0
+        Klein = 1
+    }
+
+    public enum AnimalTypes
+    {
+        PlantenEter,
+        VleesEter
     }
 
     public class Animal
     {
-        public GrootteTypes Grootte;
+        public GrootteTypes grootteTypes;
+        public AnimalTypes animalTypes;
 
         private string _Naam;
-        private bool _VleesEter;
+        private bool _AnimalAdded;
+        private bool vleesEter;
+        private string name;
 
         public string Naam
         {
-            get { return this._Naam; }
+            get { return _Naam; }
             set { _Naam = value; }
         }
-        public bool VleesEter
+
+        public bool AnimalAdded
         {
-            get { return this._VleesEter; }
-            set { _VleesEter = value; }
+            get { return _AnimalAdded; }
+            set { _AnimalAdded = value; }
         }
 
-        public Wagon Wagon
+        public Animal(string name, GrootteTypes size, AnimalTypes type)
         {
-            get => default;
-            set
-            {
-            }
+            this._Naam = name;
+            this.grootteTypes = size;
+            this.animalTypes = type;
         }
 
-        public void animal(GrootteTypes grootte, bool VleesEtende, string naam)
-        {
-            Grootte = grootte;
-            VleesEter = VleesEtende;
-            Naam = naam;
-        }
-
-        //Voor UnitTest == AnimalTest
-        public Animal(GrootteTypes grootte, bool eetVlees, string naam)
-        {
-            Grootte = grootte;
-            VleesEter = eetVlees;
-            Naam = naam;
-        }
         public override string ToString()
         {
-            return $"{Grootte} ({(VleesEter ? "Vlees" : "Plant")})";
+            return $"{Naam}, {grootteTypes}, {animalTypes}";
         }
     }
 }

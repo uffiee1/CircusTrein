@@ -37,14 +37,12 @@
             this.rbVlees = new System.Windows.Forms.RadioButton();
             this.btnVoegToe = new System.Windows.Forms.Button();
             this.btnTrain = new System.Windows.Forms.Button();
-            this.lbDierLijst = new System.Windows.Forms.ListBox();
-            this.lbTrein = new System.Windows.Forms.ListBox();
+            this.lbAnimal = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbWagon = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbTrain = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -142,26 +140,18 @@
             this.btnTrain.UseVisualStyleBackColor = true;
             this.btnTrain.Click += new System.EventHandler(this.btnTrain_Click);
             // 
-            // lbDierLijst
+            // lbAnimal
             // 
-            this.lbDierLijst.FormattingEnabled = true;
-            this.lbDierLijst.Location = new System.Drawing.Point(260, 32);
-            this.lbDierLijst.Name = "lbDierLijst";
-            this.lbDierLijst.Size = new System.Drawing.Size(193, 316);
-            this.lbDierLijst.TabIndex = 3;
-            // 
-            // lbTrein
-            // 
-            this.lbTrein.FormattingEnabled = true;
-            this.lbTrein.Location = new System.Drawing.Point(658, 32);
-            this.lbTrein.Name = "lbTrein";
-            this.lbTrein.Size = new System.Drawing.Size(193, 316);
-            this.lbTrein.TabIndex = 4;
+            this.lbAnimal.FormattingEnabled = true;
+            this.lbAnimal.Location = new System.Drawing.Point(260, 32);
+            this.lbAnimal.Name = "lbAnimal";
+            this.lbAnimal.Size = new System.Drawing.Size(193, 225);
+            this.lbAnimal.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 13);
+            this.label2.Location = new System.Drawing.Point(257, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 5;
@@ -170,28 +160,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(456, 13);
+            this.label3.Location = new System.Drawing.Point(466, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 13);
+            this.label3.Size = new System.Drawing.Size(34, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Wagon:";
-            // 
-            // lbWagon
-            // 
-            this.lbWagon.FormattingEnabled = true;
-            this.lbWagon.Location = new System.Drawing.Point(459, 32);
-            this.lbWagon.Name = "lbWagon";
-            this.lbWagon.Size = new System.Drawing.Size(193, 316);
-            this.lbWagon.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(655, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Trein:";
+            this.label3.Text = "Trein:";
             // 
             // groupBox2
             // 
@@ -216,19 +189,25 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dier Grootte:";
             // 
+            // lbTrain
+            // 
+            this.lbTrain.FormattingEnabled = true;
+            this.lbTrain.Location = new System.Drawing.Point(469, 32);
+            this.lbTrain.Name = "lbTrain";
+            this.lbTrain.Size = new System.Drawing.Size(193, 225);
+            this.lbTrain.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 352);
+            this.ClientSize = new System.Drawing.Size(671, 266);
+            this.Controls.Add(this.lbTrain);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.lbWagon);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.lbTrein);
-            this.Controls.Add(this.lbDierLijst);
+            this.Controls.Add(this.lbAnimal);
             this.Controls.Add(this.btnVoegToe);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnTrain);
@@ -256,14 +235,12 @@
         private System.Windows.Forms.RadioButton rbVlees;
         private System.Windows.Forms.Button btnVoegToe;
         private System.Windows.Forms.Button btnTrain;
-        private System.Windows.Forms.ListBox lbDierLijst;
-        private System.Windows.Forms.ListBox lbTrein;
+        private System.Windows.Forms.ListBox lbAnimal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox lbWagon;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListBox lbTrain;
     }
 }
 

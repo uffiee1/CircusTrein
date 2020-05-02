@@ -8,49 +8,64 @@ namespace CircusTrein
 {
     public class Wagon
     {
-        public List<Animal> Animals = new List<Animal>();
+        private List<Animal> _AnimalToWagon = new List<Animal>();
+        private int _Capacity = 10;
+        private bool _IsFull = false;
 
-        private int _Plaats;
-
-
-        public int Plaats
+        public List<Animal> AnimalToWagon
         {
-            get { return this._Plaats; }
-            private set{ _Plaats = 10; }
+            get { return _AnimalToWagon; }
+            set { _AnimalToWagon = value; }
         }
 
-        public Train Train
+        public int Capacity
         {
-            get => default;
-            set
-            {
-            }
+            get { return _Capacity; }
+            set { _Capacity = value; }
         }
 
-        private GrootteTypes GrootsteVleeseter()
+        public bool IsFull
         {
-            List<Animal> VleesEterList = Animals.Where(Animal => Animal.VleesEter).ToList();
-
-            if(VleesEterList.Count == 0)
-            {
-                return GrootteTypes.Groot;
-            } 
-            return VleesEterList.First().Grootte;
+            get { return _IsFull; }
+            set { _IsFull = value; }
         }
 
-        public bool AddAnimal(Animal newAnimal)
+        public Wagon(int capacity, bool isFull)
         {
-            //Check of wagon nog ruimte heeft en het dier in de wagon mag
-            if (newAnimal.Grootte > GrootsteVleeseter() && (int) newAnimal.Grootte <= Plaats)
-            {
-                Animals.Add(newAnimal);
-                Plaats = 10 - Animals.Sum(Animal => (int) Animal.Grootte);
-                return true;
-            } 
-            else
-            {
-                return false;
-            }
+            AnimalToWagon = AnimalToWagon;
+            _Capacity = capacity;
+            _IsFull = isFull;
+        }
+
+        public bool AddToWagon(Animal animal)
+        {
+            //Hier wordt animals toegevoegd in wagon(Alleen als CompatibilityCheck en CheckSize goedgekeurd wordt)
+            if (!CompatibilityCheck(animal) || !sizeCheck(animal)) return false;
+            //Na het toegevoegd animal wordt capaciteit van de wagon aangepast
+            AnimalToWagon.Add(animal);
+            animal.AnimalAdded = true;
+            Capacity = Capacity - (int) animal.grootteTypes;
+            return true;
+        }
+
+        private bool CompatibilityCheck(Animal animal)
+        {
+            //Hier wordt elke dier in wagon gecontroleerd of er zelfde type en soort in zit(Alleen geldig voor VleesEter)
+            return AnimalToWagon.All(animalCheck => (animalCheck.grootteTypes > animal.grootteTypes 
+                                                       || animal.animalTypes != AnimalTypes.VleesEter) 
+                                                      && (animalCheck.animalTypes != AnimalTypes.VleesEter 
+                                                          || animalCheck.grootteTypes < animal.grootteTypes));
+        }
+
+        private bool sizeCheck(Animal animal)
+        {
+            //Hier wordt de animal gecontroleerd welke grootte het is
+            return Capacity - animal.grootteTypes >= 0;
+        }
+
+        public override string ToString()
+        {
+            return $"Wagon, {Capacity}";
         }
     }
 }

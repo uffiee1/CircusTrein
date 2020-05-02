@@ -14,6 +14,7 @@ namespace CircusTrein
     {
         List<Animal> listAnimals = new List<Animal>();
         private readonly Train train = new Train();
+
         public Form1()
         {
             InitializeComponent();
@@ -25,40 +26,63 @@ namespace CircusTrein
             if (rbDierMiddel.Checked) return GrootteTypes.Middelgroot;
             if (rbDierKlein.Checked) return GrootteTypes.Klein;
 
-            //Als er niks ingecheked is bij dieren grootte dan maakt automatisch 0 punten bij de dieren lijst aan.
-            MessageBox.Show("Selecteer dier grootte");
-            return GrootteTypes.Geen;
-            
             //Als er niks ingecheked is bij dieren grootte maakt het automatisch een kleine dier aan.
-            //return GrootteTypes.Klein;
+            return GrootteTypes.Klein;
+        }
+
+        private AnimalTypes getAnimalTypes()
+        {
+            if (rbPlant.Checked) return AnimalTypes.PlantenEter;
+            if (rbVlees.Checked) return AnimalTypes.VleesEter;
+
+            return AnimalTypes.PlantenEter;
         }
 
         private void btnVoegToe_Click(object sender, EventArgs e)
         {
-            bool VleesEter = rbVlees.Checked;
-          
             string name = txbxDierNaam.Text;
-            Animal newAnimal = new Animal(getGrootteTypes(), VleesEter, name);
+            Animal newAnimal = new Animal(name, getGrootteTypes(), getAnimalTypes());
             listAnimals.Add(newAnimal);
-            lbDierLijst.Items.Add(newAnimal);
+
+            lbAnimal.Items.Add(newAnimal);
+        }
+
+        public void updateTrain()
+        {
+            
+            lbAnimal.Items.Clear();
+            lbTrain.Items.Clear();
+            foreach (Animal animal in train.Animals)
+            {
+                lbAnimal.Items.Add(animal);
+            }
+            foreach (Wagon wagon in train.Wagons)
+            {
+                lbTrain.Items.Add(wagon);
+            }
         }
 
         private void btnTrain_Click(object sender, EventArgs e)
         {
-            //Hier wordt de wagon lijst verwijderd en update als er dieren toegevoegd worden
-            train.Wagons.Clear();
-            train.FillWagons(listAnimals);
-            
-            //Vul listboxes
-            lbDierLijst.Items.Clear();
-            foreach (Animal item in listAnimals)
+            try
             {
-                lbDierLijst.Items.Add(item);
+                //Create and add an animal to a wagon
+                if (train.AddAnimal(txbxDierNaam.Text, getGrootteTypes(), getAnimalTypes()))
+                {
+                    updateTrain();
+                }
+                //Geef aan dat er een nieuwe wagon gemaakt wordt
+                else
+                {
+                    MessageBox.Show("Nieuwe wagon is aangemaakt");
+                    updateTrain();
+                }
             }
-            lbTrein.Items.Clear();
-            foreach (Wagon currentWagon in train.Wagons)
+            
+            //Wanneer velden leeg zijn voorkomt dat programma crasht
+            catch
             {
-                lbTrein.Items.Add(currentWagon);
+                MessageBox.Show("Er is iets misgegaan. Heeft u alle velden ingevuld?");
             }
         }
     }

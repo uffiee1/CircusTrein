@@ -8,50 +8,57 @@ namespace CircusTrein
 {
     public class Train
     {
-        public List<Wagon> Wagons = new List<Wagon>();
+        private List<Animal> _Animals = new List<Animal>();
+        private List<Wagon> _Wagons = new List<Wagon>();
 
-        public Wagon AnimalToNewWagon(Animal animal)
+        public List<Animal> Animals
         {
-            Wagon newWagon = new Wagon();
-
-            newWagon.AddAnimal(animal);
-
-            Wagons.Add(newWagon);
-
-            return newWagon;
+            get { return _Animals; }
+            set { _Animals = value; }
         }
 
-        public List<Animal> SortAnimals(List<Animal> disorderedAnimals)
+        public List<Wagon> Wagons
         {
-            return disorderedAnimals.OrderByDescending(Animal => Animal.VleesEter).ThenByDescending(Animal => (int)Animal.Grootte).ToList();
+            get { return _Wagons; }
+            set { _Wagons = value; }
         }
 
-        public void FillWagons(List<Animal> allAnimals)
+        public bool AddAnimal(string name, GrootteTypes size, AnimalTypes type)
         {
-            allAnimals = SortAnimals(allAnimals);
+            Animal animal = new Animal(name, size, type);
+            Animals.Add(animal);
 
-            foreach (Animal currentAnimal in allAnimals)
+            //Hier wordt bij elke wagon gecontroleerd of animal toegevoegd kan worden
+            foreach (Wagon wagon in Wagons)
             {
-                if (currentAnimal.VleesEter)
+                if (wagon.AddToWagon(animal))
                 {
-                    AnimalToNewWagon(currentAnimal);
-                }
-                else
-                {
-                    bool wagonCapacity = false;
-
-                    foreach(Wagon currentWagon in Wagons)
-                    { 
-                        wagonCapacity = currentWagon.AddAnimal(currentAnimal);
-                        if (wagonCapacity) break;
-                    }
-
-                    if (!wagonCapacity)
-                    {
-                        AnimalToNewWagon(currentAnimal);
-                    }
+                    return true;
                 }
             }
+            //Als er geen animal toegevoegd kan worden ga naar AnimalToNewWagon methode
+            if (animal.AnimalAdded) return false;
+            AnimalToNewWagon(animal);
+            return false;
         }
+
+        //Hier wordt een een nieuwe wagon aangemaakt en voegt het animal toe
+        private void AnimalToNewWagon(Animal animal)
+        {
+            Wagon wagon = new Wagon(10, false);
+            wagon.AddToWagon(animal);
+            Wagons.Add(wagon);
+        }
+
+        public List<Wagon> GetWagons()
+        {
+            return Wagons;
+        }
+
+        public Train()
+        {
+        }
+
+
     }
 }
