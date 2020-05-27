@@ -74,8 +74,8 @@ namespace CircusTrein
                 //Geef aan dat er een nieuwe wagon gemaakt wordt
                 else
                 {
-                    MessageBox.Show("Nieuwe wagon is aangemaakt");
-                    updateTrain();
+                    //MessageBox.Show("Nieuwe wagon is aangemaakt");
+                    //updateTrain();
                 }
             }
             

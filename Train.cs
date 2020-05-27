@@ -50,11 +50,6 @@ namespace CircusTrein
             Wagons.Add(wagon);
         }
 
-        public List<Wagon> GetWagons()
-        {
-            return Wagons;
-        }
-
         public Train()
         {
         }

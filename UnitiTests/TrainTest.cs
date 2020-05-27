@@ -12,52 +12,59 @@ namespace UnitiTests
         [TestMethod]
         public void AddWagon()
         {
-            //Train train = new Train();
+            //Arrange
+            Train train = new Train();
 
-            //Animal animal1 = new Animal(GrootteTypes.Geen, false, "nvt");
-            //Animal animal2 = new Animal(GrootteTypes.Middelgroot, false, "MiddelgrootDier");
-            //Animal animal3 = new Animal(GrootteTypes.Klein, true, "KleinVleesEterDier");
-
-            //train.AnimalToNewWagon(animal1);
-            //train.AnimalToNewWagon(animal2);
-            //train.AnimalToNewWagon(animal3);
-
-            //Assert.AreEqual(3, train.Wagons.Count);
+            //Assert
+            Assert.IsFalse(train.AddAnimal("test", GrootteTypes.Klein, AnimalTypes.VleesEter));
+            Assert.AreEqual(1, train.Wagons.Count);
+            Assert.AreEqual(1,train.Wagons[0].AnimalToWagon.Count);
         }
 
-        //[TestMethod]
-        //public void AlgoritmeTest()
-        //{
-        //    //Arrange
-        //    Train train = new Train();
-        //    List<Animal> Animals = new List<Animal>();
-        //    int expectedRemainingPlaats = 7;
+        [TestMethod]
+        public void AddNewWagon()
+        {
+            //Arrange
+            Train train = new Train();
+            Wagon wagon = new Wagon(3, false);
 
-        //    // 5 Plaats over
-        //    Animals.Add(new Animal(GrootteTypes.Groot, true, "GrootVleesEterDier"));
+            //Act
+            train.Wagons.Add(wagon);
 
-        //    ////
+            //Assert
+            Assert.IsFalse(train.AddAnimal("test", GrootteTypes.Groot, AnimalTypes.VleesEter));
+            Assert.AreEqual(2,train.Wagons.Count);
+            Assert.AreEqual(1, train.Wagons[1].AnimalToWagon.Count);
+        }
 
-        //    // Maak 10 Kleine PlantEneters
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        Animals.Add(new Animal(GrootteTypes.Klein, false, "KleinPlantEterDier"));
-        //    }
+        [TestMethod()]
+        public void AddAnimalIsTrue()
+        {
+            //Arrange
+            Train train = new Train();
+            Wagon wagon = new Wagon(10, false);
 
-        //    ////
+            //Act
+            train.Wagons.Add(wagon);
 
-        //    // 2 Plaats over
-        //    Animals.Add(new Animal(GrootteTypes.Groot, false, "GrootPlantEterDier"));
-        //    Animals.Add(new Animal(GrootteTypes.Middelgroot, true, "MiddelgrootVleesEterDier"));
+            //Assert
+            train.AddAnimal("test", GrootteTypes.Middelgroot, AnimalTypes.PlantenEter);
+            Assert.IsTrue(train.AddAnimal("test", GrootteTypes.Middelgroot, AnimalTypes.PlantenEter));
+        }
 
-        //    //Act
-        //    train.FillWagons(Animals);
+        [TestMethod()]
+        public void AddAnimalIsFalse()
+        {
+            //Arrange
+            Train train = new Train();
+            Wagon wagon = new Wagon(10, false);
 
-        //    int RemainingPlaats = train.Wagons.Sum(Wagon => Wagon.Plaats);
+            //Act
+            train.Wagons.Add(wagon);
+            train.AddAnimal("test", GrootteTypes.Middelgroot, AnimalTypes.PlantenEter);
 
-        //    //Assert
-        //    //Assert.AreEqual(2, wagon);
-        //    Assert.AreEqual(expectedRemainingPlaats, RemainingPlaats);
-        //}
+            //Assert
+            Assert.IsFalse(train.AddAnimal("test", GrootteTypes.Middelgroot, AnimalTypes.VleesEter));
+        }
     }
 }

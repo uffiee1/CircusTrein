@@ -22,13 +22,11 @@ namespace CircusTrein
 
     public class Animal
     {
-        public GrootteTypes grootteTypes;
-        public AnimalTypes animalTypes;
+        public GrootteTypes grootteType { get; }
+        public AnimalTypes animalType { get; }
 
         private string _Naam;
         private bool _AnimalAdded;
-        private bool vleesEter;
-        private string name;
 
         public string Naam
         {
@@ -45,13 +43,13 @@ namespace CircusTrein
         public Animal(string name, GrootteTypes size, AnimalTypes type)
         {
             this._Naam = name;
-            this.grootteTypes = size;
-            this.animalTypes = type;
+            this.grootteType = size;
+            this.animalType = type;
         }
 
         public override string ToString()
         {
-            return $"{Naam}, {grootteTypes}, {animalTypes}";
+            return $"{Naam}, {grootteType}, {animalType}";
         }
     }
 }

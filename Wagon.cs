@@ -44,23 +44,23 @@ namespace CircusTrein
             //Na het toegevoegd animal wordt capaciteit van de wagon aangepast
             AnimalToWagon.Add(animal);
             animal.AnimalAdded = true;
-            Capacity = Capacity - (int) animal.grootteTypes;
+            Capacity = Capacity - (int) animal.grootteType;
             return true;
         }
 
         private bool CompatibilityCheck(Animal animal)
         {
             //Hier wordt elke dier in wagon gecontroleerd of er zelfde type en soort in zit(Alleen geldig voor VleesEter)
-            return AnimalToWagon.All(animalCheck => (animalCheck.grootteTypes > animal.grootteTypes 
-                                                       || animal.animalTypes != AnimalTypes.VleesEter) 
-                                                      && (animalCheck.animalTypes != AnimalTypes.VleesEter 
-                                                          || animalCheck.grootteTypes < animal.grootteTypes));
+            return AnimalToWagon.All(animalCheck => (animalCheck.grootteType > animal.grootteType 
+                                                       || animal.animalType != AnimalTypes.VleesEter) 
+                                                      && (animalCheck.animalType != AnimalTypes.VleesEter 
+                                                          || animalCheck.grootteType < animal.grootteType));
         }
 
         private bool sizeCheck(Animal animal)
         {
             //Hier wordt de animal gecontroleerd welke grootte het is
-            return Capacity - animal.grootteTypes >= 0;
+            return Capacity - animal.grootteType >= 0;
         }
 
         public override string ToString()
